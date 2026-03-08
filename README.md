@@ -10,14 +10,14 @@ NRPA 알고리즘 기반 AI 솔버를 탑재한 클론다이크 솔리테어 웹
 
 ---
 
-## 2. 개발 방법론
-이 프로젝트는 **프롬프트 문서와 에이전트 워크플로우를 통한 '바이브 코딩(Vibe Coding)'으로 개발**되었습니다.
+## 2. 에이전틱 개발
 
-* **개발 환경**: Claude Code + oh-my-claudecode (OMC)
-* **기획 프로세스**: 커스텀 에이전트 5종(game-design-orchestrator, classic-rule-agent, creative-rule-agent, doc-agent, game-mode-creator)으로 구성된 **Game Design Orchestrator** 시스템 구축.
-    * 에이전트 간 3라운드 토론 및 비판 프로토콜을 통해 기획안(GDD) 도출.
-    * 도출된 기획을 바탕으로 Doc Agent가 PRD 및 TRD를 자동 생성하여 구현 가이드 마련.
-* **구현 방식**: 생성된 기술 설계 문서(TRD)와 기존 코드베이스의 인터페이스를 에이전트가 참조하여 기능 단위별 코드를 생성하고 통합을 수행함.
+```
+사용자 프롬프트 → 에이전트 토론(GDD) → 문서 생성(PRD/TRD) → 코드 구현 → 빌드 검증 → 자동 배포
+```
+
+* **도구**: Claude Code CLI + oh-my-claudecode (OMC)
+* **트리거**: 웹 챗봇 명령어(`모드!` / `개선!`) → GitHub Actions 워크플로우 실행
 
 ---
 
